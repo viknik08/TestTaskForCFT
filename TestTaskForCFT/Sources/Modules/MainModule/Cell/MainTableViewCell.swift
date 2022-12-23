@@ -10,6 +10,14 @@ import UIKit
 class MainTableViewCell: UITableViewCell {
     static let identifier = "MainTableViewCell"
     
+    var task: TaskEntity? {
+        didSet {
+            if let task = task {
+                titleLable.text = task.title
+            }
+        }
+    }
+    
 //    MARK: - Outlets
     private lazy var titleLable: UILabel = {
         let lable = UILabel()
