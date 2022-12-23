@@ -18,6 +18,8 @@
 		BE7D903529557ED300919828 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D903429557ED300919828 /* MainViewModel.swift */; };
 		BE7D9038295580E600919828 /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D9037295580E600919828 /* TextField + Extension.swift */; };
 		BE7D903A2955848100919828 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90392955848100919828 /* MainTableViewCell.swift */; };
+		BE7D903C29558BA600919828 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D903B29558BA600919828 /* CoreDataManager.swift */; };
+		BE7D903E2955952A00919828 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D903D2955952A00919828 /* ModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		BE7D903429557ED300919828 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BE7D9037295580E600919828 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
 		BE7D90392955848100919828 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		BE7D903B29558BA600919828 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BE7D903D2955952A00919828 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		BE7D902A2955788100919828 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BE7D903D2955952A00919828 /* ModuleBuilder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			children = (
 				BE7D90182955752200919828 /* TestTaskForCFT.xcdatamodeld */,
 				BE7D902D29557AF800919828 /* TaskEntity.swift */,
+				BE7D903B29558BA600919828 /* CoreDataManager.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -240,9 +246,11 @@
 				BE7D902E29557AF800919828 /* TaskEntity.swift in Sources */,
 				BE7D90142955752200919828 /* MainViewController.swift in Sources */,
 				BE7D90102955752100919828 /* AppDelegate.swift in Sources */,
+				BE7D903E2955952A00919828 /* ModuleBuilder.swift in Sources */,
 				BE7D901A2955752200919828 /* TestTaskForCFT.xcdatamodeld in Sources */,
 				BE7D90122955752200919828 /* SceneDelegate.swift in Sources */,
 				BE7D903529557ED300919828 /* MainViewModel.swift in Sources */,
+				BE7D903C29558BA600919828 /* CoreDataManager.swift in Sources */,
 				BE7D9038295580E600919828 /* TextField + Extension.swift in Sources */,
 				BE7D903A2955848100919828 /* MainTableViewCell.swift in Sources */,
 			);

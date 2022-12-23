@@ -14,19 +14,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let viewController = MainViewController()
+        let viewController = ModuleBuilder.creatMainModule()
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-
+        (UIApplication.shared.delegate as? CoreDataManager)?.saveContext()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        (UIApplication.shared.delegate as? CoreDataManager)?.saveContext()
     }
 
 

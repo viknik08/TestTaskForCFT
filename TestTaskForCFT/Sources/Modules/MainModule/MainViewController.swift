@@ -10,6 +10,8 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
+    var viewModel: MainViewModelProtocol?
+    
 //    MARK: - Outlets
     
     private lazy var taskTextField: UITextField = {
@@ -50,6 +52,20 @@ class MainViewController: UIViewController {
         setupDelegat()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchTask()
+    }
+    
+    init(viewModel: MainViewModelProtocol?) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 //    MARK: - Setup
     
     private func setupHierarсhy() {
@@ -81,6 +97,7 @@ class MainViewController: UIViewController {
     private func setupDelegat() {
         taskTableView.delegate = self
         taskTableView.dataSource = self
+        viewModel?.delegat = self
     }
     
     private func setupNavigationBar() {
@@ -92,9 +109,12 @@ class MainViewController: UIViewController {
 //    MARK: - Action
     
     @objc func addTaskInTableView() {
+        if taskTextField.text != "" {
+            viewModel?.saveTask(text: taskTextField.text)
+            taskTextField.text = ""
+        }
         
     }
-
 
 }
 
@@ -107,11 +127,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return viewModel?.tasks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = taskTableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as? MainTableViewCell
+        cell?.task = viewModel?.tasks?[indexPath.row]
         cell?.accessoryType = .disclosureIndicator
         return cell ?? UITableViewCell()
     }
@@ -121,9 +142,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        if editingStyle == .delete {
+            taskTableView.beginUpdates()
+            viewModel?.deleteTask(index: indexPath)
+            taskTableView.deleteRows(at: [indexPath], with: .automatic)
+            taskTableView.endUpdates()
+        }
     }
     
-    
+}
+
+extension MainViewController: MainViewControllerProtocol {
+    func updateTasks() {
+        taskTableView.reloadData()
+    }
 }
 
