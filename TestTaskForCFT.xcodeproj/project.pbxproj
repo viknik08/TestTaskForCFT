@@ -10,10 +10,11 @@
 		BE7D90102955752100919828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D900F2955752100919828 /* AppDelegate.swift */; };
 		BE7D90122955752200919828 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90112955752200919828 /* SceneDelegate.swift */; };
 		BE7D90142955752200919828 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90132955752200919828 /* ViewController.swift */; };
-		BE7D90172955752200919828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE7D90152955752200919828 /* Main.storyboard */; };
 		BE7D901A2955752200919828 /* TestTaskForCFT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90182955752200919828 /* TestTaskForCFT.xcdatamodeld */; };
 		BE7D901C2955752900919828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7D901B2955752900919828 /* Assets.xcassets */; };
 		BE7D901F2955752900919828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE7D901D2955752900919828 /* LaunchScreen.storyboard */; };
+		BE7D902E29557AF800919828 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D902D29557AF800919828 /* TaskEntity.swift */; };
+		BE7D903329557BCF00919828 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE7D903229557BCF00919828 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,11 @@
 		BE7D900F2955752100919828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE7D90112955752200919828 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE7D90132955752200919828 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE7D90162955752200919828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE7D90192955752200919828 /* TestTaskForCFT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestTaskForCFT.xcdatamodel; sourceTree = "<group>"; };
 		BE7D901B2955752900919828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE7D901E2955752900919828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE7D90202955752900919828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE7D902D29557AF800919828 /* TaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7D903329557BCF00919828 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +60,88 @@
 		BE7D900E2955752100919828 /* TestTaskForCFT */ = {
 			isa = PBXGroup;
 			children = (
-				BE7D900F2955752100919828 /* AppDelegate.swift */,
-				BE7D90112955752200919828 /* SceneDelegate.swift */,
-				BE7D90132955752200919828 /* ViewController.swift */,
-				BE7D90152955752200919828 /* Main.storyboard */,
-				BE7D901B2955752900919828 /* Assets.xcassets */,
-				BE7D901D2955752900919828 /* LaunchScreen.storyboard */,
-				BE7D90202955752900919828 /* Info.plist */,
-				BE7D90182955752200919828 /* TestTaskForCFT.xcdatamodeld */,
+				BE7D9027295576A500919828 /* Resources */,
+				BE7D90262955769B00919828 /* Sources */,
 			);
 			path = TestTaskForCFT;
+			sourceTree = "<group>";
+		};
+		BE7D90262955769B00919828 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D9028295576FC00919828 /* App */,
+				BE7D90292955770700919828 /* Modules */,
+				BE7D902B295578A100919828 /* DataBase */,
+				BE7D902A2955788100919828 /* Helpers */,
+				BE7D902C295578AE00919828 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BE7D9027295576A500919828 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D901B2955752900919828 /* Assets.xcassets */,
+				BE7D90202955752900919828 /* Info.plist */,
+				BE7D901D2955752900919828 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE7D9028295576FC00919828 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D900F2955752100919828 /* AppDelegate.swift */,
+				BE7D90112955752200919828 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BE7D90292955770700919828 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D902F29557B4B00919828 /* MainModule */,
+				BE7D903029557B5C00919828 /* DetailModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BE7D902A2955788100919828 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BE7D902B295578A100919828 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D90182955752200919828 /* TestTaskForCFT.xcdatamodeld */,
+				BE7D902D29557AF800919828 /* TaskEntity.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		BE7D902C295578AE00919828 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE7D902F29557B4B00919828 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D90132955752200919828 /* ViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		BE7D903029557B5C00919828 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +160,9 @@
 			dependencies = (
 			);
 			name = TestTaskForCFT;
+			packageProductDependencies = (
+				BE7D903229557BCF00919828 /* SnapKit */,
+			);
 			productName = TestTaskForCFT;
 			productReference = BE7D900C2955752100919828 /* TestTaskForCFT.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +191,9 @@
 				Base,
 			);
 			mainGroup = BE7D90032955752100919828;
+			packageReferences = (
+				BE7D903129557BCF00919828 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = BE7D900D2955752100919828 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +210,6 @@
 			files = (
 				BE7D901F2955752900919828 /* LaunchScreen.storyboard in Resources */,
 				BE7D901C2955752900919828 /* Assets.xcassets in Resources */,
-				BE7D90172955752200919828 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7D902E29557AF800919828 /* TaskEntity.swift in Sources */,
 				BE7D90142955752200919828 /* ViewController.swift in Sources */,
 				BE7D90102955752100919828 /* AppDelegate.swift in Sources */,
 				BE7D901A2955752200919828 /* TestTaskForCFT.xcdatamodeld in Sources */,
@@ -151,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE7D90152955752200919828 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE7D90162955752200919828 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE7D901D2955752900919828 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,10 +367,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 65ZD43WNWU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestTaskForCFT/Info.plist;
+				INFOPLIST_FILE = TestTaskForCFT/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,10 +394,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 65ZD43WNWU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestTaskForCFT/Info.plist;
+				INFOPLIST_FILE = TestTaskForCFT/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE7D903129557BCF00919828 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE7D903229557BCF00919828 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE7D903129557BCF00919828 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BE7D90182955752200919828 /* TestTaskForCFT.xcdatamodeld */ = {
