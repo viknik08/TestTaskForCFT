@@ -61,13 +61,14 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
         viewModel?.delegat = self
         viewModel?.loadInfo()
 
         setupHierarchy()
         setupLayout()
         setupNavigationBarItem(isActive)
+        setupKeyboard()
         
     }
     
@@ -82,6 +83,25 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate {
     }
     
 //    MARK: - Setup
+    
+    private func setupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height / 2
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     
     @objc func chooseImage() {
         let view = UIImagePickerController()
@@ -203,3 +223,4 @@ extension DetailViewController: DetailViewControllerProtocol {
         }
     }
 }
+
