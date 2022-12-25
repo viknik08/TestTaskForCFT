@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE120D1E29581D3C001688BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE120D1D29581D3C001688BE /* DetailViewController.swift */; };
+		BE120D2029582DA5001688BE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE120D1F29582DA5001688BE /* DetailViewModel.swift */; };
 		BE7D90102955752100919828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D900F2955752100919828 /* AppDelegate.swift */; };
 		BE7D90122955752200919828 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90112955752200919828 /* SceneDelegate.swift */; };
 		BE7D90142955752200919828 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90132955752200919828 /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		BE120D1D29581D3C001688BE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE120D1F29582DA5001688BE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		BE7D900C2955752100919828 /* TestTaskForCFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskForCFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7D900F2955752100919828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE7D90112955752200919828 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				BE120D1D29581D3C001688BE /* DetailViewController.swift */,
+				BE120D1F29582DA5001688BE /* DetailViewModel.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				BE7D903E2955952A00919828 /* ModuleBuilder.swift in Sources */,
 				BE7D901A2955752200919828 /* TestTaskForCFT.xcdatamodeld in Sources */,
 				BE7D90122955752200919828 /* SceneDelegate.swift in Sources */,
+				BE120D2029582DA5001688BE /* DetailViewModel.swift in Sources */,
 				BE7D903529557ED300919828 /* MainViewModel.swift in Sources */,
 				BE7D903C29558BA600919828 /* CoreDataManager.swift in Sources */,
 				BE7D9038295580E600919828 /* TextField + Extension.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController, UINavigationControllerDelegate {
     
+    var viewModel: DetailViewModelProtocol?
+    var task: TaskEntity?
     var isActive = true
     
 //    MARK: - Outlets
@@ -19,7 +21,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate {
     
     private lazy var imageAvatar: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "camera.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        image.image = UIImage(named: "no-image")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 100
@@ -59,11 +61,24 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        viewModel?.delegat = self
+        viewModel?.loadInfo()
 
         setupHierarchy()
         setupLayout()
         setupNavigationBarItem(isActive)
         
+    }
+    
+    init(viewModel: DetailViewModelProtocol?, task: TaskEntity?) {
+        self.viewModel = viewModel
+        self.task = task
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 //    MARK: - Setup
@@ -90,6 +105,10 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate {
             titleField.setBottomDev(.white)
             descriptionField.isEnabled = false
             descriptionField.setBottomDev(.white)
+            viewModel?.updataInfo(id: task?.id ?? "",
+                                  title: titleField.text ?? "",
+                                  descrip: descriptionField.text ?? nil,
+                                  image: imageAvatar.image?.pngData() ?? nil)
         }
         
         isActive.toggle()
@@ -171,5 +190,16 @@ extension DetailViewController: UIImagePickerControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+    }
+}
+
+extension DetailViewController: DetailViewControllerProtocol {
+    
+    func showTaskDetail() {
+        titleField.text = task?.title ?? ""
+        descriptionField.text = task?.descrip ?? ""
+        if let image = task?.image {
+            imageAvatar.image = UIImage(data: image)
+        }
     }
 }

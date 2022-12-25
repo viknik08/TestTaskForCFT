@@ -113,7 +113,6 @@ class MainViewController: UIViewController {
             viewModel?.saveTask(text: taskTextField.text)
             taskTextField.text = ""
         }
-        
     }
 
 }
@@ -139,6 +138,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         taskTableView.deselectRow(at: indexPath, animated: true)
+        let task = viewModel?.tasks?[indexPath.row]
+        let viewController = ModuleBuilder.creatDetailModule(task: task)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

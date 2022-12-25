@@ -21,7 +21,7 @@ protocol MainViewModelProtocol {
 
 class MainViewModel: MainViewModelProtocol {
 
-    var tasks: [TaskEntity]?
+    var tasks: [TaskEntity]? 
     
     weak var delegat: MainViewControllerProtocol?
     
