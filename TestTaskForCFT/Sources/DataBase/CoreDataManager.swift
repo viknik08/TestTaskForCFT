@@ -72,13 +72,13 @@ class CoreDataManager {
         
     }
     
-    func updataTask(id: String, title: String, discrip: String?, image: Date?) {
+    func updataTask(id: String, title: String, descrip: String?, image: Date?) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskEntity")
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         if let tasks = try? persistentContainer.viewContext.fetch(fetchRequest) as? [TaskEntity], !tasks.isEmpty {
             guard let requiredTask = tasks.first else { return }
             requiredTask.setValue(title, forKey: "title")
-            requiredTask.setValue(discrip, forKey: "discrip")
+            requiredTask.setValue(descrip, forKey: "descrip")
             requiredTask.setValue(image, forKey: "image")
             try? persistentContainer.viewContext.save()
         }
