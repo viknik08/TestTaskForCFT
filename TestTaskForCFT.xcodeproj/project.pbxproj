@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE120D1E29581D3C001688BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE120D1D29581D3C001688BE /* DetailViewController.swift */; };
 		BE7D90102955752100919828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D900F2955752100919828 /* AppDelegate.swift */; };
 		BE7D90122955752200919828 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90112955752200919828 /* SceneDelegate.swift */; };
 		BE7D90142955752200919828 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D90132955752200919828 /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE120D1D29581D3C001688BE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BE7D900C2955752100919828 /* TestTaskForCFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskForCFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7D900F2955752100919828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE7D90112955752200919828 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		BE7D903029557B5C00919828 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				BE120D1D29581D3C001688BE /* DetailViewController.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE120D1E29581D3C001688BE /* DetailViewController.swift in Sources */,
 				BE7D902E29557AF800919828 /* TaskEntity.swift in Sources */,
 				BE7D90142955752200919828 /* MainViewController.swift in Sources */,
 				BE7D90102955752100919828 /* AppDelegate.swift in Sources */,

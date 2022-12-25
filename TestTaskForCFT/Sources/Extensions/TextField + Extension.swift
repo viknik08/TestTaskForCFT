@@ -18,5 +18,16 @@ extension UITextField {
         leftView = iconContainerView
         leftViewMode = .always
     }
-
+    
+    func setBottomDev(_ color: UIColor) {
+        let view = UIView()
+        view.backgroundColor = color
+        self.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.left.right.equalTo(self)
+            make.bottom.equalTo(self)
+            make.height.equalTo(1)
+        }
+    }
+    
 }
